@@ -1,11 +1,12 @@
 import { useState } from "react";
+import "../App.css";
 
 export const PasswordGenerate = () => {
-  const [length, setLength] = useState(6);
-  const [uppercase, setUppercase] = useState(true);
-  const [lowercase, setLowercase] = useState(true);
-  const [number, setNumber] = useState(true);
-  const [symbol, setSymbol] = useState(true);
+  const [length, setLength] = useState();
+  const [uppercase, setUppercase] = useState();
+  const [lowercase, setLowercase] = useState();
+  const [number, setNumber] = useState();
+  const [symbol, setSymbol] = useState();
   const [generate, setGenerate] = useState("");
 
   const generatePass = () => {
@@ -35,11 +36,16 @@ export const PasswordGenerate = () => {
     setGenerate(passGenerated);
   };
 
+  const copyLetter = () => {
+    navigator.clipboard.writeText(generate);
+    alert("Password Copied..");
+  };
+
   return (
     <>
       <div className="container">
         <h2>Password Generator</h2>
-        <div>
+        <div className="input_sec">
           <label htmlFor="num">Password Lengths</label>
           <input
             type="number"
@@ -70,11 +76,11 @@ export const PasswordGenerate = () => {
           <div className="checkbox">
             <input
               type="checkbox"
-              id="num"
+              id="num1"
               checked={number}
               onChange={(e) => setNumber(e.target.checked)}
             />
-            <label htmlFor="num">Include Number</label>
+            <label htmlFor="num1">Include Number</label>
           </div>
           <div className="checkbox">
             <input
@@ -85,10 +91,11 @@ export const PasswordGenerate = () => {
             />
             <label htmlFor="Symbol">Include Symbol</label>
           </div>
+          <button onClick={generatePass}>Generate</button>
         </div>
         <div className="generate">
-          <button onClick={generatePass}>Generate</button>
           <input type="text" value={generate} />
+          <button onClick={copyLetter}>Copy</button>
         </div>
       </div>
     </>

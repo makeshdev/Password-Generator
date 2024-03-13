@@ -6,3 +6,83 @@
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: #6b54bf;
+}
+.container {
+  background: #947ce8;
+  color: #fff;
+  width: 350px;
+  padding: 20px;
+  box-shadow: 14px 10px 20px 6px #553bb3;
+}
+.container h2 {
+  text-align: center;
+  text-transform: capitalize;
+  margin: 10px 0;
+}
+.input_sec {
+  display: grid;
+  padding: 10px 0;
+}
+.input_sec label {
+  font-size: 14px;
+  padding-bottom: 4px;
+}
+.input_sec input {
+  padding: 10px;
+  border: 1px solid #fff;
+  outline: unset;
+}
+.box {
+  margin-bottom: 10px;
+}
+.checkbox {
+  margin-bottom: 6px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.checkbox label {
+  font-size: 16px;
+}
+.checkbox input {
+  width: 18px;
+  height: 18px;
+  margin-right: 4px;
+}
+.box button {
+  padding: 10px 20px;
+  border: unset;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  background: #553bb3;
+  color: #fff;
+  margin: 10px 0;
+  cursor: pointer;
+}
+.generate {
+  position: relative;
+}
+.generate input {
+  width: 100%;
+  padding: 10px;
+  outline: unset;
+}
+.generate button {
+  position: absolute;
+  padding: 9px;
+  font-size: 16px;
+  background: #947ce8;
+  border: 1px solid #fff;
+  color: #fff;
+  right: 0;
+  bottom: 1px;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+}
